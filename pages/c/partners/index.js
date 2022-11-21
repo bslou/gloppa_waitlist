@@ -92,6 +92,7 @@ const Partners = () => {
     }
   };
   const [display, changeDisplay] = useState("none");
+  const [display2, changeDisplay2] = useState("none");
   return (
     <Flex direction={"column"} alignItems={"center"} width={"100vw"}>
       <Modal isOpen={isOpen} onClose={onClose}>
@@ -403,7 +404,12 @@ const Partners = () => {
             Gloppa
           </Link>
         </NextLink>
-        <Flex direction={"row"} alignItems={"center"} gap={20}>
+        <Flex
+          direction={"row"}
+          alignItems={"center"}
+          gap={20}
+          display={["none", "none", "flex", "flex"]}
+        >
           <NextLink
             href={"https://www.linkedin.com/in/benjamin-sloutsky-9b9b09235/"}
             target={"_blank"}
@@ -427,6 +433,109 @@ const Partners = () => {
           <Text color={"white"} width={"10vw"} fontSize={"13pt"}>
             ©Gloppa, 2022 All rights reserved
           </Text>
+        </Flex>
+        <IconButton
+          aria-label="Open Menu"
+          size="lg"
+          mr={2}
+          icon={<HamburgerIcon />}
+          onClick={() => changeDisplay2("flex")}
+          display={["flex", "flex", "none", "none"]}
+        />
+        {/**Mobile */}
+
+        <Flex
+          w="100vw"
+          display={display2}
+          bgColor="gray.50"
+          zIndex={2000000}
+          h="100vh"
+          pos="fixed"
+          top="0"
+          left="0"
+          overflowY="auto"
+          flexDir="column"
+        >
+          <Flex justify="flex-end">
+            <IconButton
+              mt={2}
+              mr={2}
+              aria-label="Open Menu"
+              size="lg"
+              icon={<CloseIcon />}
+              onClick={() => changeDisplay2("none")}
+            />
+          </Flex>
+
+          <Flex flexDir="column" align="center">
+            <NextLink href="/" passHref>
+              <Button
+                fontWeight={600}
+                fontSize={"20pt"}
+                as="a"
+                variant="ghost"
+                aria-label="Home"
+                my={5}
+                w="100%"
+              >
+                Gloppa
+              </Button>
+            </NextLink>
+
+            <NextLink
+              href={"https://www.linkedin.com/in/benjamin-sloutsky-9b9b09235/"}
+              target={"_blank"}
+              passHref
+            >
+              <Button as="a" variant="ghost" aria-label="About" my={5} w="100%">
+                LinkedIn
+              </Button>
+            </NextLink>
+
+            <NextLink
+              href={"https://twitter.com/GloppaG"}
+              target={"_blank"}
+              passHref
+            >
+              <Button
+                as="a"
+                variant="ghost"
+                aria-label="Contact"
+                my={5}
+                w="100%"
+              >
+                Twitter
+              </Button>
+            </NextLink>
+
+            <NextLink href={"/c/terms"} passHref>
+              <Button
+                as="a"
+                variant="ghost"
+                aria-label="Contact"
+                my={5}
+                w="100%"
+              >
+                Terms
+              </Button>
+            </NextLink>
+
+            <NextLink href="/c/privacy" passHref>
+              <Button
+                as="a"
+                variant="ghost"
+                aria-label="Contact"
+                my={5}
+                w="100%"
+              >
+                Privacy
+              </Button>
+            </NextLink>
+
+            <Text color={"white"} width={"10vw"} fontSize={"13pt"}>
+              ©Gloppa, 2022 All rights reserved
+            </Text>
+          </Flex>
         </Flex>
       </Flex>
     </Flex>
