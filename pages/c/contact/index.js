@@ -113,8 +113,10 @@ const Contact = () => {
           <ModalCloseButton />
           <ModalBody>
             <form onSubmit={(e) => saveDB(e)}>
-              <Flex direction={"column"} alignItems={"left"} marginBottom={3}>
-                <Text>Email</Text>
+              <Flex direction={"column"} alignItems={"center"} marginBottom={3}>
+                <Text textAlign={"left"} width={"100%"}>
+                  Email
+                </Text>
                 <Input
                   type={"email"}
                   autoComplete
@@ -129,7 +131,6 @@ const Contact = () => {
                   colorScheme="blue"
                   width={100}
                   marginTop={3}
-                  marginLeft={155}
                   type={"submit"}
                 >
                   Submit
@@ -242,7 +243,7 @@ const Contact = () => {
               <Flex
                 direction={"column"}
                 alignItems={"left"}
-                width={{ base: 180, md: 310, lg: 450 }}
+                width={{ base: 140, md: 310, lg: 450 }}
                 gap={1}
               >
                 <Text>First Name *</Text>
@@ -261,7 +262,7 @@ const Contact = () => {
               <Flex
                 direction={"column"}
                 alignItems={"left"}
-                width={{ base: 180, md: 310, lg: 450 }}
+                width={{ base: 140, md: 310, lg: 450 }}
                 gap={1}
               >
                 <Text>Last Name *</Text>
@@ -287,7 +288,7 @@ const Contact = () => {
               <Flex
                 direction={"column"}
                 alignItems={"left"}
-                width={{ base: 180, md: 310, lg: 450 }}
+                width={{ base: 140, md: 310, lg: 450 }}
                 gap={1}
               >
                 <Text>Email</Text>
@@ -305,7 +306,7 @@ const Contact = () => {
               <Flex
                 direction={"column"}
                 alignItems={"left"}
-                width={{ base: 180, md: 310, lg: 450 }}
+                width={{ base: 140, md: 310, lg: 450 }}
                 gap={1}
               >
                 <Text>Phone Number</Text>
@@ -330,7 +331,7 @@ const Contact = () => {
               <Flex
                 direction={"column"}
                 alignItems={"left"}
-                width={{ base: 400, md: 750, lg: 940 }}
+                width={{ base: 330, md: 750, lg: 940 }}
                 gap={1}
               >
                 <Text>Message *</Text>

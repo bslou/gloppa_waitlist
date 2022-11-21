@@ -65,8 +65,10 @@ const Privacy = () => {
           <ModalCloseButton />
           <ModalBody>
             <form onSubmit={(e) => saveDB(e)}>
-              <Flex direction={"column"} alignItems={"left"} marginBottom={3}>
-                <Text>Email</Text>
+              <Flex direction={"column"} alignItems={"center"} marginBottom={3}>
+                <Text textAlign={"left"} width={"100%"}>
+                  Email
+                </Text>
                 <Input
                   type={"text"}
                   autoComplete
@@ -81,7 +83,6 @@ const Privacy = () => {
                   colorScheme="blue"
                   width={100}
                   marginTop={3}
-                  marginLeft={155}
                   type={"submit"}
                 >
                   Submit
