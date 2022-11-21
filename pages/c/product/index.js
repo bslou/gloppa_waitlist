@@ -278,10 +278,14 @@ const Product = () => {
           alignItems={"center"}
           justifyContent={"center"}
         >
-          <Text color={"white"} fontWeight={200} fontSize={"25pt"}>
+          <Text
+            color={"white"}
+            fontWeight={200}
+            fontSize={"25pt"}
+            textAlign={"center"}
+          >
             Gloppa is your startup
-          </Text>
-          <Text color={"white"} fontWeight={200} fontSize={"25pt"}>
+            <br />
             entertainment center
           </Text>
         </Flex>

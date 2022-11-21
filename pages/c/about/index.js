@@ -215,6 +215,7 @@ const About = () => {
           <Text
             fontSize={{ base: "20pt", md: "26pt", lg: "33pt" }}
             fontWeight={600}
+            textAlign={"center"}
           >
             We are startup enthusiasts and creators hoping to make it fun
           </Text>

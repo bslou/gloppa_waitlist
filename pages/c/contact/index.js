@@ -210,26 +210,20 @@ const Contact = () => {
         >
           <Text
             fontWeight={600}
+            textAlign={"center"}
             fontSize={{ base: "20pt", md: "30pt", lg: "40pt" }}
           >
             Let's make something
-          </Text>
-          <Text
-            fontWeight={600}
-            fontSize={{ base: "20pt", md: "30pt", lg: "40pt" }}
-          >
+            <br />
             great together
           </Text>
           <Text
             fontWeight={300}
+            textAlign={"center"}
             fontSize={{ base: "15pt", md: "20pt", lg: "30pt" }}
           >
             We are looking forward
-          </Text>
-          <Text
-            fontWeight={300}
-            fontSize={{ base: "15pt", md: "20pt", lg: "30pt" }}
-          >
+            <br />
             to hearing from you!
           </Text>
         </Flex>

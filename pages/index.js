@@ -167,14 +167,10 @@ const Home = () => {
           <Text
             color={"white"}
             fontSize={{ base: "20pt", md: "30pt", lg: "40pt" }}
+            textAlign={"center"}
           >
             Launching a startup is like playing
-          </Text>
-          <Text
-            color={"white"}
-            fontSize={{ base: "20pt", md: "30pt", lg: "40pt" }}
-          >
-            a video game
+            <br />a video game
           </Text>
         </Flex>
         <Button

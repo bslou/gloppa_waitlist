@@ -151,13 +151,10 @@ const Careers = () => {
         <Text
           fontSize={{ base: "18pt", md: "22pt", lg: "28pt" }}
           fontWeight={200}
+          textAlign={"center"}
         >
           We’re determined to help
-        </Text>
-        <Text
-          fontSize={{ base: "18pt", md: "22pt", lg: "28pt" }}
-          fontWeight={200}
-        >
+          <br />
           people enjoy creating startups!
         </Text>
         <Image
