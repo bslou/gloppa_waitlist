@@ -476,7 +476,6 @@ const Product = () => {
         padding={7}
         width={"100vw"}
         fontSize={"14pt"}
-        marginTop={100}
         justify="space-between"
       >
         <NextLink href={"/"}>
