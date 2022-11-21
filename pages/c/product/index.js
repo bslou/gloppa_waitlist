@@ -163,7 +163,7 @@ const Product = () => {
       >
         <Text
           color={"white"}
-          fontSize={{ base: "30pt", md: "40pt", lg: "50pt" }}
+          fontSize={{ base: "23pt", md: "36pt", lg: "50pt" }}
         >
           Welcome to your fun office!
         </Text>
