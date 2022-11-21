@@ -1,3 +1,4 @@
+import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 import {
   Button,
   Flex,
@@ -13,6 +14,7 @@ import {
   useDisclosure,
   useToast,
   Link,
+  IconButton,
 } from "@chakra-ui/react";
 import Image from "next/image";
 import NextLink from "next/link";
@@ -56,6 +58,7 @@ const Home = () => {
       });
     }
   };
+  const [display, changeDisplay] = useState("none");
   return (
     <Flex direction={"column"} alignItems={"center"} width={"100vw"}>
       <Modal isOpen={isOpen} onClose={onClose}>
@@ -93,6 +96,7 @@ const Home = () => {
         </ModalContent>
       </Modal>
 
+      {/**Desktop */}
       <Flex
         direction={"row"}
         width={"100vw"}
@@ -111,7 +115,12 @@ const Home = () => {
             Gloppa
           </Link>
         </NextLink>
-        <Flex direction={"row"} alignItems={"center"} gap={"10"}>
+        <Flex
+          direction={"row"}
+          alignItems={"center"}
+          gap={"10"}
+          display={["none", "none", "flex", "flex"]}
+        >
           <NextLink href={"/c/product"}>
             <Link color={"white"}>Product</Link>
           </NextLink>
@@ -141,7 +150,124 @@ const Home = () => {
             Join waitlist
           </Button>
         </Flex>
+        <IconButton
+          aria-label="Open Menu"
+          size="lg"
+          mr={2}
+          icon={<HamburgerIcon />}
+          onClick={() => changeDisplay("flex")}
+          display={["flex", "flex", "none", "none"]}
+        />
+        {/**Mobile */}
+
+        <Flex
+          w="100vw"
+          display={display}
+          bgColor="gray.50"
+          zIndex={20}
+          h="100vh"
+          pos="fixed"
+          top="0"
+          left="0"
+          overflowY="auto"
+          flexDir="column"
+        >
+          <Flex justify="flex-end">
+            <IconButton
+              mt={2}
+              mr={2}
+              aria-label="Open Menu"
+              size="lg"
+              icon={<CloseIcon />}
+              onClick={() => changeDisplay("none")}
+            />
+          </Flex>
+
+          <Flex flexDir="column" align="center">
+            <NextLink href="/" passHref>
+              <Button
+                fontWeight={600}
+                fontSize={"20pt"}
+                as="a"
+                variant="ghost"
+                aria-label="Home"
+                my={5}
+                w="100%"
+              >
+                Gloppa
+              </Button>
+            </NextLink>
+
+            <NextLink href="/c/product" passHref>
+              <Button as="a" variant="ghost" aria-label="About" my={5} w="100%">
+                Product
+              </Button>
+            </NextLink>
+
+            <NextLink href="/c/about" passHref>
+              <Button
+                as="a"
+                variant="ghost"
+                aria-label="Contact"
+                my={5}
+                w="100%"
+              >
+                About
+              </Button>
+            </NextLink>
+
+            <NextLink href="/c/partners" passHref>
+              <Button
+                as="a"
+                variant="ghost"
+                aria-label="Contact"
+                my={5}
+                w="100%"
+              >
+                Partners
+              </Button>
+            </NextLink>
+
+            <NextLink href="/c/careers" passHref>
+              <Button
+                as="a"
+                variant="ghost"
+                aria-label="Contact"
+                my={5}
+                w="100%"
+              >
+                Careers
+              </Button>
+            </NextLink>
+
+            <NextLink href="/c/contact" passHref>
+              <Button
+                as="a"
+                variant="ghost"
+                aria-label="Contact"
+                my={5}
+                w="100%"
+              >
+                Contact
+              </Button>
+            </NextLink>
+
+            <Button
+              backgroundColor={"#0094FF"}
+              paddingLeft={5}
+              paddingRight={5}
+              paddingTop={2}
+              paddingBottom={2}
+              color={"black"}
+              borderRadius={20}
+              onClick={onOpen}
+            >
+              Join Waitlist
+            </Button>
+          </Flex>
+        </Flex>
       </Flex>
+
       <Flex
         direction={"column"}
         alignItems={"center"}
