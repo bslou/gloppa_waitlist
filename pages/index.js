@@ -14,10 +14,10 @@ import {
   useToast,
   Link,
 } from "@chakra-ui/react";
-import { auth, db } from "./firebaseconfig";
 import Image from "next/image";
 import NextLink from "next/link";
 import { useState } from "react";
+import { auth, db } from "../public/firebaseconfig";
 
 const Home = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();

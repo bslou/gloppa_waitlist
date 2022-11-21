@@ -16,7 +16,7 @@ import {
   Link,
 } from "@chakra-ui/react";
 import emailjs from "@emailjs/browser";
-import { auth, db } from "../../firebaseconfig";
+import { auth, db } from "../public/firebaseconfig";
 import Image from "next/image";
 import NextLink from "next/link";
 import { useState } from "react";
