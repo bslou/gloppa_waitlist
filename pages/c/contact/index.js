@@ -242,7 +242,7 @@ const Contact = () => {
               <Flex
                 direction={"column"}
                 alignItems={"left"}
-                width={{ base: 210, md: 310, lg: 450 }}
+                width={{ base: 180, md: 310, lg: 450 }}
                 gap={1}
               >
                 <Text>First Name *</Text>
@@ -261,7 +261,7 @@ const Contact = () => {
               <Flex
                 direction={"column"}
                 alignItems={"left"}
-                width={{ base: 210, md: 310, lg: 450 }}
+                width={{ base: 180, md: 310, lg: 450 }}
                 gap={1}
               >
                 <Text>Last Name *</Text>
@@ -287,7 +287,7 @@ const Contact = () => {
               <Flex
                 direction={"column"}
                 alignItems={"left"}
-                width={{ base: 210, md: 310, lg: 450 }}
+                width={{ base: 180, md: 310, lg: 450 }}
                 gap={1}
               >
                 <Text>Email</Text>
@@ -305,7 +305,7 @@ const Contact = () => {
               <Flex
                 direction={"column"}
                 alignItems={"left"}
-                width={{ base: 210, md: 310, lg: 450 }}
+                width={{ base: 180, md: 310, lg: 450 }}
                 gap={1}
               >
                 <Text>Phone Number</Text>
@@ -330,7 +330,7 @@ const Contact = () => {
               <Flex
                 direction={"column"}
                 alignItems={"left"}
-                width={{ base: 460, md: 750, lg: 940 }}
+                width={{ base: 400, md: 750, lg: 940 }}
                 gap={1}
               >
                 <Text>Message *</Text>

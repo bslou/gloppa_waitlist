@@ -242,25 +242,19 @@ const Home = () => {
             <Text
               fontWeight={700}
               fontSize={{ base: "22pt", md: "32pt", lg: "42pt" }}
+              textAlign={"center"}
             >
               Do you want in?
             </Text>
             <Text
               fontSize={{ base: "15pt", md: "25pt", lg: "35pt" }}
               fontWeight={200}
+              textAlign={"center"}
             >
               We'll make sure
-            </Text>
-            <Text
-              fontSize={{ base: "15pt", md: "25pt", lg: "35pt" }}
-              fontWeight={200}
-            >
+              <br />
               your startup experience
-            </Text>
-            <Text
-              fontSize={{ base: "15pt", md: "25pt", lg: "35pt" }}
-              fontWeight={200}
-            >
+              <br />
               is better than ever!
             </Text>
           </Flex>
