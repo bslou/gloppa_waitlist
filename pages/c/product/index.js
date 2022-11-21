@@ -164,6 +164,7 @@ const Product = () => {
         <Text
           color={"white"}
           fontSize={{ base: "23pt", md: "36pt", lg: "50pt" }}
+          textAlign={"center"}
         >
           Welcome to your fun office!
         </Text>
