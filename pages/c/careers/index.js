@@ -14,12 +14,12 @@ import {
   useToast,
   Link,
 } from "@chakra-ui/react";
-import { auth, db } from "./firebaseconfig";
+import { auth, db } from "../../firebaseconfig";
 import Image from "next/image";
 import NextLink from "next/link";
 import { useState } from "react";
 
-const Home = () => {
+const Careers = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [eml, setEml] = useState("");
   const toast = useToast();
@@ -91,7 +91,6 @@ const Home = () => {
           </ModalBody>
         </ModalContent>
       </Modal>
-
       <Flex
         direction={"row"}
         width={"100vw"}
@@ -141,151 +140,192 @@ const Home = () => {
           </Button>
         </Flex>
       </Flex>
-      <Flex
-        direction={"column"}
-        alignItems={"center"}
-        backgroundSize={"100% 100%"}
-        width={"100vw"}
-        height={"120vh"}
-        marginTop={"70"}
-        backgroundImage={"url(/assets/top.png)"}
-        gap={10}
-      >
+
+      <Flex direction={"column"} alignItems={"center"} marginTop={130} gap={3}>
         <Text
-          fontSize={{ base: "60pt", md: "80pt", lg: "100pt" }}
-          fontWeight={800}
-          color={"white"}
-          marginTop={10}
-        >
-          Gloppa
-        </Text>
-        <Flex
-          direction={"column"}
-          alignItems={"center"}
-          justifyContent={"center"}
-        >
-          <Text
-            color={"white"}
-            fontSize={{ base: "20pt", md: "30pt", lg: "40pt" }}
-          >
-            Launching a startup is like playing
-          </Text>
-          <Text
-            color={"white"}
-            fontSize={{ base: "20pt", md: "30pt", lg: "40pt" }}
-          >
-            a video game
-          </Text>
-        </Flex>
-        <Button
-          backgroundColor={"black"}
-          color={"white"}
-          fontSize={{ base: "15pt", md: "20pt", lg: "25pt" }}
-          padding={"8"}
-          borderRadius={20}
           fontWeight={600}
-          onClick={onOpen}
+          fontSize={{ base: "24pt", md: "32pt", lg: "40pt" }}
         >
-          Join waitlist
-        </Button>
-      </Flex>
-      <Flex marginTop={10} marginBottom={10}>
-        <Image
-          src={"/assets/pic.png"}
-          width={1000}
-          height={600}
-          alt={"Gloppa Sample"}
-        />
-      </Flex>
-      <Flex
-        direction={"column"}
-        alignItems={"center"}
-        justifyContent={"center"}
-        width={"80vw"}
-        gap={5}
-        marginTop={50}
-      >
-        <Text
-          fontWeight={700}
-          fontSize={{ base: "22pt", md: "32pt", lg: "42pt" }}
-        >
-          Easy and fun way of creating a startup
+          Join our journey
         </Text>
         <Text
+          fontSize={{ base: "18pt", md: "22pt", lg: "28pt" }}
           fontWeight={200}
-          fontSize={{ base: "15pt", md: "25pt", lg: "35pt" }}
         >
-          Gloppa makes the process of creating a startup as fun as creating a
-          video game! Having fun not only makes you happier but also helps you
-          faster progress through advancing your startup!
+          We’re determined to help
         </Text>
-      </Flex>
-      <Flex
-        direction={"row"}
-        alignItems={"center"}
-        justifyContent={"center"}
-        marginTop={75}
-        width={"100vw"}
-      >
-        <Flex width={{ base: 200, md: 250, lg: 300 }}>
-          <Image
-            src={"/assets/right.png"}
-            width={300}
-            height={1000}
-            alt="Gloppa right"
-          />
-        </Flex>
-        <Flex
-          direction={"column"}
-          alignItems={"center"}
-          justifyContent={"center"}
-          width={"60vw"}
-          gap={10}
+        <Text
+          fontSize={{ base: "18pt", md: "22pt", lg: "28pt" }}
+          fontWeight={200}
         >
-          <Flex direction={"column"} alignItems={"center"}>
-            <Text
-              fontWeight={700}
-              fontSize={{ base: "22pt", md: "32pt", lg: "42pt" }}
-            >
-              Do you want in?
-            </Text>
-            <Text
-              fontSize={{ base: "15pt", md: "25pt", lg: "35pt" }}
-              fontWeight={200}
-            >
-              We'll make sure
-            </Text>
-            <Text
-              fontSize={{ base: "15pt", md: "25pt", lg: "35pt" }}
-              fontWeight={200}
-            >
-              your startup experience
-            </Text>
-            <Text
-              fontSize={{ base: "15pt", md: "25pt", lg: "35pt" }}
-              fontWeight={200}
-            >
-              is better than ever!
-            </Text>
-          </Flex>
-          <Button
-            width={{ base: 100, md: 125, lg: 150 }}
-            height={{ base: 100, md: 125, lg: 150 }}
-            backgroundColor={"black"}
-            borderRadius={"50%"}
-            color={"white"}
-            fontSize={{ base: "10pt", md: "14pt", lg: "18pt" }}
-            onClick={onOpen}
+          people enjoy creating startups!
+        </Text>
+        <Image
+          src={"/assets/careersImage.png"}
+          alt={"Gloppa careers image"}
+          width={1000}
+          height={800}
+        />
+        <Text
+          fontWeight={600}
+          fontSize={{ base: "14pt", md: "18pt", lg: "23pt" }}
+        >
+          Open Positions
+        </Text>
+        <Flex direction={"column"} alignItems={"center"} gap={7}>
+          <Text
+            fontWeight={600}
+            fontSize={{ base: "14pt", md: "18pt", lg: "23pt" }}
           >
-            Join the
-            <br />
-            Waitlist
-          </Button>
+            Engineering
+          </Text>
+          <NextLink
+            href={"https://tally.so/r/3q5bz9"}
+            passHref
+            target={"_blank"}
+          >
+            <Flex
+              direction={"column"}
+              alignItems={"center"}
+              justifyContent={"center"}
+            >
+              <Text
+                color={"#001AFF"}
+                fontSize={{ base: "12pt", md: "14pt", lg: "18pt" }}
+              >
+                Backend Developer
+              </Text>
+              <Text
+                color={"#808080"}
+                fontSize={{ base: "12pt", md: "14pt", lg: "18pt" }}
+              >
+                Develop Firebase Backend * Contract
+              </Text>
+            </Flex>
+          </NextLink>
+          <NextLink
+            href={"https://tally.so/r/n9Nd4V"}
+            target={"_blank"}
+            passHref
+          >
+            <Flex
+              direction={"column"}
+              alignItems={"center"}
+              justifyContent={"center"}
+            >
+              <Text
+                color={"#001AFF"}
+                fontSize={{ base: "12pt", md: "14pt", lg: "18pt" }}
+              >
+                Frontend Developer
+              </Text>
+              <Text
+                color={"#808080"}
+                fontSize={{ base: "12pt", md: "14pt", lg: "18pt" }}
+              >
+                Develop React Chakra Frontend * Contract
+              </Text>
+            </Flex>
+          </NextLink>
         </Flex>
-        <Flex width={{ base: 200, md: 250, lg: 300 }}>
-          <Image src={"/assets/left.png"} width={300} height={1000} />
+        <Flex direction={"column"} alignItems={"center"} gap={7} marginTop={5}>
+          <Text
+            fontWeight={600}
+            fontSize={{ base: "14pt", md: "18pt", lg: "23pt" }}
+          >
+            Designer
+          </Text>
+          <NextLink
+            href={"https://tally.so/r/m6DdVJ"}
+            passHref
+            target={"_blank"}
+          >
+            <Flex
+              direction={"column"}
+              alignItems={"center"}
+              justifyContent={"center"}
+            >
+              <Text
+                color={"#001AFF"}
+                fontSize={{ base: "12pt", md: "14pt", lg: "18pt" }}
+              >
+                UI/UX Designer
+              </Text>
+              <Text
+                color={"#808080"}
+                fontSize={{ base: "12pt", md: "14pt", lg: "18pt" }}
+              >
+                Design future releases using Figma * Part-Time
+              </Text>
+            </Flex>
+          </NextLink>
+        </Flex>
+        <Flex direction={"column"} alignItems={"center"} gap={7} marginTop={5}>
+          <Text
+            fontWeight={600}
+            fontSize={{ base: "14pt", md: "18pt", lg: "23pt" }}
+          >
+            Marketing
+          </Text>
+          <NextLink
+            href={"https://tally.so/r/wkbYre"}
+            passHref
+            target={"_blank"}
+          >
+            <Flex
+              direction={"column"}
+              alignItems={"center"}
+              justifyContent={"center"}
+            >
+              <Text
+                color={"#001AFF"}
+                fontSize={{ base: "12pt", md: "14pt", lg: "18pt" }}
+              >
+                Marketer and PR
+              </Text>
+              <Text
+                color={"#808080"}
+                fontSize={{ base: "12pt", md: "14pt", lg: "18pt" }}
+              >
+                Send email and get in touch * Contract
+              </Text>
+            </Flex>
+          </NextLink>
+        </Flex>
+        <Flex direction={"column"} alignItems={"center"} gap={7} marginTop={5}>
+          <Text
+            fontWeight={600}
+            fontSize={{ base: "14pt", md: "18pt", lg: "23pt" }}
+          >
+            Social Media
+          </Text>
+          <NextLink
+            href={"https://tally.so/r/3yXl7x"}
+            passHref
+            target={"_blank"}
+          >
+            <Flex
+              direction={"column"}
+              alignItems={"center"}
+              justifyContent={"center"}
+            >
+              <Text
+                color={"#001AFF"}
+                fontSize={{ base: "12pt", md: "14pt", lg: "18pt" }}
+              >
+                Social Media Manager
+              </Text>
+              <Text
+                color={"#808080"}
+                fontSize={{ base: "12pt", md: "14pt", lg: "18pt" }}
+              >
+                Post on Twitter and LinkedIn * Internship
+              </Text>
+            </Flex>
+          </NextLink>
         </Flex>
       </Flex>
+
       <Flex
         direction={"row"}
         alignItems={"center"}
@@ -336,4 +376,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Careers;

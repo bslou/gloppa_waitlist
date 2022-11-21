@@ -14,12 +14,12 @@ import {
   useToast,
   Link,
 } from "@chakra-ui/react";
-import { auth, db } from "./firebaseconfig";
+import { auth, db } from "../../firebaseconfig";
 import Image from "next/image";
 import NextLink from "next/link";
 import { useState } from "react";
 
-const Home = () => {
+const Product = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [eml, setEml] = useState("");
   const toast = useToast();
@@ -57,7 +57,12 @@ const Home = () => {
     }
   };
   return (
-    <Flex direction={"column"} alignItems={"center"} width={"100vw"}>
+    <Flex
+      direction={"column"}
+      alignItems={"center"}
+      width={"100vw"}
+      backgroundColor={"#323232"}
+    >
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
@@ -91,7 +96,6 @@ const Home = () => {
           </ModalBody>
         </ModalContent>
       </Modal>
-
       <Flex
         direction={"row"}
         width={"100vw"}
@@ -141,151 +145,198 @@ const Home = () => {
           </Button>
         </Flex>
       </Flex>
-      <Flex
-        direction={"column"}
-        alignItems={"center"}
-        backgroundSize={"100% 100%"}
-        width={"100vw"}
-        height={"120vh"}
-        marginTop={"70"}
-        backgroundImage={"url(/assets/top.png)"}
-        gap={10}
-      >
-        <Text
-          fontSize={{ base: "60pt", md: "80pt", lg: "100pt" }}
-          fontWeight={800}
-          color={"white"}
-          marginTop={10}
-        >
-          Gloppa
-        </Text>
-        <Flex
-          direction={"column"}
-          alignItems={"center"}
-          justifyContent={"center"}
-        >
-          <Text
-            color={"white"}
-            fontSize={{ base: "20pt", md: "30pt", lg: "40pt" }}
-          >
-            Launching a startup is like playing
-          </Text>
-          <Text
-            color={"white"}
-            fontSize={{ base: "20pt", md: "30pt", lg: "40pt" }}
-          >
-            a video game
-          </Text>
-        </Flex>
-        <Button
-          backgroundColor={"black"}
-          color={"white"}
-          fontSize={{ base: "15pt", md: "20pt", lg: "25pt" }}
-          padding={"8"}
-          borderRadius={20}
-          fontWeight={600}
-          onClick={onOpen}
-        >
-          Join waitlist
-        </Button>
-      </Flex>
-      <Flex marginTop={10} marginBottom={10}>
+      <Flex marginTop={"90"} direction={"column"} alignItems={"center"}>
         <Image
           src={"/assets/pic.png"}
-          width={1000}
-          height={600}
-          alt={"Gloppa Sample"}
+          alt={"Gloppa sample"}
+          width={950}
+          height={750}
         />
       </Flex>
+
       <Flex
         direction={"column"}
         alignItems={"center"}
-        justifyContent={"center"}
-        width={"80vw"}
-        gap={5}
-        marginTop={50}
+        marginTop={15}
+        marginBottom={15}
       >
         <Text
-          fontWeight={700}
-          fontSize={{ base: "22pt", md: "32pt", lg: "42pt" }}
+          color={"white"}
+          fontSize={{ base: "30pt", md: "40pt", lg: "50pt" }}
         >
-          Easy and fun way of creating a startup
+          Welcome to your fun office!
         </Text>
-        <Text
-          fontWeight={200}
-          fontSize={{ base: "15pt", md: "25pt", lg: "35pt" }}
+        <Flex
+          direction={"row"}
+          alignItems={"center"}
+          justifyContent={"center"}
+          marginTop={41}
+          gap={10}
         >
-          Gloppa makes the process of creating a startup as fun as creating a
-          video game! Having fun not only makes you happier but also helps you
-          faster progress through advancing your startup!
-        </Text>
+          <Flex
+            direction={"column"}
+            alignItems={"left"}
+            justifyContent={"center"}
+            width={{ base: 100, md: 225, lg: 350 }}
+          >
+            <Image
+              src={"/assets/lineOne.png"}
+              alt={"Gloppa line one"}
+              width={350}
+              height={2}
+            />
+            <Text
+              fontSize={{ base: "20pt", md: "30pt", lg: "40pt" }}
+              color={"white"}
+              fontWeight={600}
+            >
+              Goals
+            </Text>
+            <Text
+              color={"white"}
+              fontWeight={200}
+              fontSize={{ base: "15pt", md: "20pt", lg: "25pt" }}
+            >
+              Set short and long term goals you have for the startup.
+            </Text>
+          </Flex>
+          <Flex
+            direction={"column"}
+            alignItems={"left"}
+            justifyContent={"center"}
+            width={{ base: 100, md: 225, lg: 350 }}
+          >
+            <Image
+              src={"/assets/lineTwo.png"}
+              alt={"Gloppa line two"}
+              width={350}
+              height={2}
+            />
+            <Text
+              fontSize={{ base: "20pt", md: "30pt", lg: "40pt" }}
+              color={"white"}
+              fontWeight={600}
+            >
+              Achieve
+            </Text>
+            <Text
+              color={"white"}
+              fontWeight={200}
+              fontSize={{ base: "15pt", md: "20pt", lg: "25pt" }}
+            >
+              Achieve your goals that you set easily through Gloppa
+            </Text>
+          </Flex>
+          <Flex
+            direction={"column"}
+            alignItems={"left"}
+            justifyContent={"center"}
+            width={{ base: 100, md: 225, lg: 350 }}
+            marginTop={47}
+          >
+            <Image
+              src={"/assets/lineThree.png"}
+              alt={"Gloppa line three"}
+              width={350}
+              height={2}
+            />
+            <Text
+              fontSize={{ base: "20pt", md: "30pt", lg: "40pt" }}
+              color={"white"}
+              fontWeight={600}
+            >
+              Game
+            </Text>
+            <Text
+              color={"white"}
+              fontWeight={200}
+              fontSize={{ base: "15pt", md: "20pt", lg: "25pt" }}
+            >
+              Play a fun game, and have fun during the process of building a
+              startup
+            </Text>
+          </Flex>
+        </Flex>
       </Flex>
       <Flex
-        direction={"row"}
+        marginTop={40}
+        width={"100vw"}
+        height={"100vh"}
+        direction={"column"}
         alignItems={"center"}
         justifyContent={"center"}
-        marginTop={75}
-        width={"100vw"}
+        bgGradient="linear(to-r, #00E7A1, #0049B6)"
       >
-        <Flex width={{ base: 200, md: 250, lg: 300 }}>
-          <Image
-            src={"/assets/right.png"}
-            width={300}
-            height={1000}
-            alt="Gloppa right"
-          />
-        </Flex>
+        <Image
+          src={"/assets/game.png"}
+          alt={"Gloppa game"}
+          width={100}
+          height={100}
+        />
         <Flex
           direction={"column"}
           alignItems={"center"}
           justifyContent={"center"}
-          width={"60vw"}
-          gap={10}
         >
-          <Flex direction={"column"} alignItems={"center"}>
-            <Text
-              fontWeight={700}
-              fontSize={{ base: "22pt", md: "32pt", lg: "42pt" }}
-            >
-              Do you want in?
-            </Text>
-            <Text
-              fontSize={{ base: "15pt", md: "25pt", lg: "35pt" }}
-              fontWeight={200}
-            >
-              We'll make sure
-            </Text>
-            <Text
-              fontSize={{ base: "15pt", md: "25pt", lg: "35pt" }}
-              fontWeight={200}
-            >
-              your startup experience
-            </Text>
-            <Text
-              fontSize={{ base: "15pt", md: "25pt", lg: "35pt" }}
-              fontWeight={200}
-            >
-              is better than ever!
+          <Text color={"white"} fontWeight={200} fontSize={"25pt"}>
+            Gloppa is your startup
+          </Text>
+          <Text color={"white"} fontWeight={200} fontSize={"25pt"}>
+            entertainment center
+          </Text>
+        </Flex>
+        <Flex gap={5} direction={"column"} marginTop={10}>
+          <Flex
+            direction={"row"}
+            alignItems={"center"}
+            justifyContent={"center"}
+            gap={5}
+          >
+            <Image
+              src={"/assets/money.png"}
+              alt="Gloppa money"
+              width={"40"}
+              height={"40"}
+            />
+            <Text color={"white"} fontWeight={200} fontSize={"18pt"}>
+              Earn coins and upgrade
             </Text>
           </Flex>
-          <Button
-            width={{ base: 100, md: 125, lg: 150 }}
-            height={{ base: 100, md: 125, lg: 150 }}
-            backgroundColor={"black"}
-            borderRadius={"50%"}
-            color={"white"}
-            fontSize={{ base: "10pt", md: "14pt", lg: "18pt" }}
-            onClick={onOpen}
+          <Flex
+            direction={"row"}
+            alignItems={"center"}
+            justifyContent={"center"}
+            gap={5}
           >
-            Join the
-            <br />
-            Waitlist
-          </Button>
-        </Flex>
-        <Flex width={{ base: 200, md: 250, lg: 300 }}>
-          <Image src={"/assets/left.png"} width={300} height={1000} />
+            <Image
+              src={"/assets/party.png"}
+              alt="Gloppa money"
+              width={"40"}
+              height={"40"}
+            />
+            <Text color={"white"} fontWeight={200} fontSize={"18pt"}>
+              Have fun and enjoy
+            </Text>
+          </Flex>
+          <Flex
+            direction={"row"}
+            alignItems={"center"}
+            justifyContent={"center"}
+            gap={5}
+          >
+            <Image
+              src={"/assets/mission.png"}
+              alt="Gloppa money"
+              width={"40"}
+              height={"40"}
+            />
+            <Text color={"white"} fontWeight={200} fontSize={"18pt"}>
+              Achieve startup goals
+            </Text>
+          </Flex>
         </Flex>
       </Flex>
+
       <Flex
         direction={"row"}
         alignItems={"center"}
@@ -293,7 +344,6 @@ const Home = () => {
         padding={7}
         width={"100vw"}
         fontSize={"14pt"}
-        marginTop={100}
         justify="space-between"
       >
         <NextLink href={"/"}>
@@ -336,4 +386,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Product;

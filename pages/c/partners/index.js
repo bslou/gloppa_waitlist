@@ -14,14 +14,20 @@ import {
   useToast,
   Link,
 } from "@chakra-ui/react";
-import { auth, db } from "./firebaseconfig";
+import { auth, db } from "../../firebaseconfig";
 import Image from "next/image";
 import NextLink from "next/link";
 import { useState } from "react";
 
-const Home = () => {
+const Partners = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const {
+    isOpen: isOpen2,
+    onOpen: onOpen2,
+    onClose: onClose2,
+  } = useDisclosure();
   const [eml, setEml] = useState("");
+  const [email, setEmail] = useState("");
   const toast = useToast();
   const validateEmail = (email) => {
     return String(email)
@@ -37,6 +43,33 @@ const Home = () => {
         email: eml,
       });
       setEml("");
+      toast({
+        title: "Email registered!",
+        description: "Email just registered to database!",
+        status: "success",
+        duration: 3000,
+        isClosable: true,
+      });
+    } else {
+      //toast wrong
+      toast({
+        title: "Email in wrong format!",
+        description:
+          "This email format is incorrect making it wrong and invalid!",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+      });
+    }
+  };
+
+  const saveDBase = (e) => {
+    e.preventDefault();
+    if (validateEmail(email)) {
+      db.collection("partners").add({
+        email: email,
+      });
+      setEmail("");
       toast({
         title: "Email registered!",
         description: "Email just registered to database!",
@@ -74,6 +107,40 @@ const Home = () => {
                   value={eml}
                   onChange={(e) => {
                     setEml(e.target.value);
+                  }}
+                  placeholder={"one.example@gmail.com"}
+                />
+                <Button
+                  colorScheme="blue"
+                  width={100}
+                  marginTop={3}
+                  marginLeft={155}
+                  type={"submit"}
+                >
+                  Submit
+                </Button>
+              </Flex>
+            </form>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
+
+      <Modal isOpen={isOpen2} onClose={onClose2}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Partner with us</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <form onSubmit={(e) => saveDBase(e)}>
+              <Flex direction={"column"} alignItems={"left"} marginBottom={3}>
+                <Text>Email</Text>
+                <Input
+                  type={"text"}
+                  autoComplete
+                  required
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
                   }}
                   placeholder={"one.example@gmail.com"}
                 />
@@ -141,151 +208,54 @@ const Home = () => {
           </Button>
         </Flex>
       </Flex>
+
       <Flex
+        marginTop={90}
         direction={"column"}
         alignItems={"center"}
-        backgroundSize={"100% 100%"}
-        width={"100vw"}
-        height={"120vh"}
-        marginTop={"70"}
-        backgroundImage={"url(/assets/top.png)"}
+        width={"90vw"}
         gap={10}
+        marginBottom={20}
       >
-        <Text
-          fontSize={{ base: "60pt", md: "80pt", lg: "100pt" }}
-          fontWeight={800}
-          color={"white"}
-          marginTop={10}
-        >
-          Gloppa
-        </Text>
-        <Flex
-          direction={"column"}
-          alignItems={"center"}
-          justifyContent={"center"}
-        >
+        <Flex direction={"column"} alignItems={"center"}>
           <Text
-            color={"white"}
-            fontSize={{ base: "20pt", md: "30pt", lg: "40pt" }}
+            fontWeight={600}
+            fontSize={{ base: "14pt", md: "22pt", lg: "30pt" }}
           >
-            Launching a startup is like playing
+            partner with
           </Text>
           <Text
-            color={"white"}
-            fontSize={{ base: "20pt", md: "30pt", lg: "40pt" }}
+            fontWeight={600}
+            fontSize={{ base: "40pt", md: "50pt", lg: "60pt" }}
           >
-            a video game
+            Gloppa
           </Text>
         </Flex>
-        <Button
-          backgroundColor={"black"}
-          color={"white"}
-          fontSize={{ base: "15pt", md: "20pt", lg: "25pt" }}
-          padding={"8"}
-          borderRadius={20}
-          fontWeight={600}
-          onClick={onOpen}
+        <Text
+          fontSize={{ base: "14pt", md: "22pt", lg: "30pt" }}
+          fontWeight={200}
         >
-          Join waitlist
+          We are making startups funner and easier for others to work and
+          create. If you are a startup also looking to help other startups, we
+          would love to connect and possibly partner! If you'd rather prefer
+          emailing, then our email is dreammateofficial@gmail.com. We look
+          forward to connecting soon :)
+        </Text>
+        <Button
+          width={{ base: 90, md: 130, lg: 180 }}
+          height={{ base: 90, md: 130, lg: 180 }}
+          backgroundColor={"black"}
+          borderRadius={"50%"}
+          color={"white"}
+          fontSize={{ base: "16pt", md: "22pt", lg: "25pt" }}
+          onClick={onOpen2}
+        >
+          Get
+          <br />
+          Started
         </Button>
       </Flex>
-      <Flex marginTop={10} marginBottom={10}>
-        <Image
-          src={"/assets/pic.png"}
-          width={1000}
-          height={600}
-          alt={"Gloppa Sample"}
-        />
-      </Flex>
-      <Flex
-        direction={"column"}
-        alignItems={"center"}
-        justifyContent={"center"}
-        width={"80vw"}
-        gap={5}
-        marginTop={50}
-      >
-        <Text
-          fontWeight={700}
-          fontSize={{ base: "22pt", md: "32pt", lg: "42pt" }}
-        >
-          Easy and fun way of creating a startup
-        </Text>
-        <Text
-          fontWeight={200}
-          fontSize={{ base: "15pt", md: "25pt", lg: "35pt" }}
-        >
-          Gloppa makes the process of creating a startup as fun as creating a
-          video game! Having fun not only makes you happier but also helps you
-          faster progress through advancing your startup!
-        </Text>
-      </Flex>
-      <Flex
-        direction={"row"}
-        alignItems={"center"}
-        justifyContent={"center"}
-        marginTop={75}
-        width={"100vw"}
-      >
-        <Flex width={{ base: 200, md: 250, lg: 300 }}>
-          <Image
-            src={"/assets/right.png"}
-            width={300}
-            height={1000}
-            alt="Gloppa right"
-          />
-        </Flex>
-        <Flex
-          direction={"column"}
-          alignItems={"center"}
-          justifyContent={"center"}
-          width={"60vw"}
-          gap={10}
-        >
-          <Flex direction={"column"} alignItems={"center"}>
-            <Text
-              fontWeight={700}
-              fontSize={{ base: "22pt", md: "32pt", lg: "42pt" }}
-            >
-              Do you want in?
-            </Text>
-            <Text
-              fontSize={{ base: "15pt", md: "25pt", lg: "35pt" }}
-              fontWeight={200}
-            >
-              We'll make sure
-            </Text>
-            <Text
-              fontSize={{ base: "15pt", md: "25pt", lg: "35pt" }}
-              fontWeight={200}
-            >
-              your startup experience
-            </Text>
-            <Text
-              fontSize={{ base: "15pt", md: "25pt", lg: "35pt" }}
-              fontWeight={200}
-            >
-              is better than ever!
-            </Text>
-          </Flex>
-          <Button
-            width={{ base: 100, md: 125, lg: 150 }}
-            height={{ base: 100, md: 125, lg: 150 }}
-            backgroundColor={"black"}
-            borderRadius={"50%"}
-            color={"white"}
-            fontSize={{ base: "10pt", md: "14pt", lg: "18pt" }}
-            onClick={onOpen}
-          >
-            Join the
-            <br />
-            Waitlist
-          </Button>
-        </Flex>
-        <Flex width={{ base: 200, md: 250, lg: 300 }}>
-          <Image src={"/assets/left.png"} width={300} height={1000} />
-        </Flex>
-      </Flex>
+
       <Flex
         direction={"row"}
         alignItems={"center"}
@@ -336,4 +306,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Partners;
