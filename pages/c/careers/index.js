@@ -474,7 +474,7 @@ const Careers = () => {
           direction={"row"}
           alignItems={"center"}
           gap={20}
-          display={["none", "none", "flex", "flex"]}
+          display={["none", "none", "none", "none", "flex"]}
         >
           <NextLink
             href={"https://www.linkedin.com/in/benjamin-sloutsky-9b9b09235/"}
@@ -506,7 +506,7 @@ const Careers = () => {
           mr={2}
           icon={<HamburgerIcon />}
           onClick={() => changeDisplay2("flex")}
-          display={["flex", "flex", "none", "none"]}
+          display={["flex", "flex", "flex", "flex", "none"]}
         />
         {/**Mobile */}
 

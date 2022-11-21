@@ -119,7 +119,7 @@ const Privacy = () => {
           direction={"row"}
           alignItems={"center"}
           gap={"10"}
-          display={["none", "none", "flex", "flex"]}
+          display={["none", "none", "none", "none", "flex"]}
         >
           <NextLink href={"/c/product"}>
             <Link color={"white"}>Product</Link>
@@ -156,7 +156,7 @@ const Privacy = () => {
           mr={2}
           icon={<HamburgerIcon />}
           onClick={() => changeDisplay("flex")}
-          display={["flex", "flex", "none", "none"]}
+          display={["flex", "flex", "flex", "flex", "none"]}
         />
         {/**Mobile */}
 
