@@ -274,9 +274,9 @@ const Home = () => {
         alignItems={"center"}
         backgroundSize={"100% 100%"}
         width={"100vw"}
-        height={"120vh"}
+        height={{ base: 550, md: 750, lg: 940 }}
         marginTop={"70"}
-        backgroundImage={"url(/assets/top.png)"}
+        backgroundImage={"url(/assets/backg.png)"}
         gap={10}
       >
         <Text
@@ -284,6 +284,7 @@ const Home = () => {
           fontWeight={800}
           color={"white"}
           marginTop={10}
+          textShadow={"2px 8px 4px rgba(0,0,0,0.6)"}
         >
           Gloppa
         </Text>
